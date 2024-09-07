@@ -35,7 +35,7 @@ public class UsuarioResource {
         usuarioService.deletarUsuario(id);
         return ResponseEntity.noContent().build();
     }
-    @PutMapping
+    @PutMapping(value = "/{id}")
     public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuarioAtualizado) {
         Usuario usuario = usuarioService.atualizarUsuario(id, usuarioAtualizado);
         return ResponseEntity.ok(usuario);
